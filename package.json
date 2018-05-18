@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "micro-ui": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/micro-ui/micro-ui-cli.git"
@@ -16,4 +19,8 @@
     "url": "https://github.com/micro-ui/micro-ui-cli/issues"
   },
   "homepage": "https://github.com/micro-ui/micro-ui-cli#readme",
+  "dependencies": {
+    "cli-spinner": "^0.2.8",
+    "inquirer": "^5.2.0"
+  }
 }

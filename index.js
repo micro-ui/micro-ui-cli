@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const inquirer = require('inquirer')
 const generator = require('./lib/project-generator')
 
@@ -19,12 +21,16 @@ const QUESTIONS = [
 ]
 
 inquirer.prompt(QUESTIONS).then(answers => {
-    switch (answers.choice) {
-        case 'Project':
-            generator.generateNewProject()
-        break;
+    try {
+        switch (answers.choice) {
+            case 'Project':
+                generator.generateNewProject()
+            break;
 
-        default:
-            throw new Error('That choice is not supported. Aborting.')
+            default:
+                throw new Error('That choice is not supported. Aborting.')
+        }
+    } catch (err) {
+        console.error(err)
     }
 })
